@@ -7,7 +7,9 @@ O objetivo deste repositório é ter um exemplo de implementação de GraphQL co
 
 ## Exemplo de requisição
 
-Em GraphQL todas as requisições são POST.<br/>
+Em GraphQL todas as requisições são POST, o que muda é o conteúdo do corpo da requisição<br/>
+para fazer uma consulta usamos o type *query* e para inserir, atualizar e remover usamos o type *mutation*.
+
 Neste projeto o endpoint base para requisições é<br/>
 `localhost:8080/graphql`
 
@@ -56,6 +58,9 @@ variables: "{
 }"
 ```
 
+### Exemplo Request Mutation Postman
 ![img.png](exemploRequestMutationPostman.png)
+### Exemplo Request Query Postman
 ![img.png](exemploRequestQueryPostman.png)
+### Exemplo Request Query Com Parâmetros Postman
 ![img.png](exemploRequestQueryComParametrosPostman.png)
