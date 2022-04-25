@@ -2,24 +2,24 @@
 
 O objetivo deste repositório é ter um exemplo de implementação de GraphQL com Spring Boot simples
 
-##Requisitos
+## Requisitos
 - Java 17
 
-##Exemplo de requisição
+## Exemplo de requisição
 
 Em GraphQL todas as requisições são POST.<br/>
 Neste projeto o endpoint base para requisições é<br/>
 `localhost:8080/graphql`
 
-####Exemplo com CURL para adicionar um item
+#### Exemplo com CURL para adicionar um item
 ```
-curl -X POST 'localhost:8080/graphql' -H 'Content-Type: application/json' -d '{"query":"mutation createBook($input: BookInput!){createBook(book: $input) {title,isbn}}","variables":{"input":{"title":"Book 2"}}}'
+curl -X POST 'localhost:8080/graphql' -H 'Content-Type: application/json' -d '{"query":"mutation createBook($input: BookInput!){createBook(book: $input) {title,isbn}}","variables":{"input":{"title":"Book 1"}}}'
 ```
-####Exemplo com CURL para listar todos os itens 
+#### Exemplo com CURL para listar todos os itens 
 ```
 curl -X POST 'localhost:8080/graphql' -H 'Content-Type: application/json' -d'{"query":"query {findBooks {title,isbn}}","variables":{}}'
 ```
-####Corpo da requisição para adicionar um item
+#### Corpo da requisição para adicionar um item
 ```
 query: "mutation createBook($input: BookInput! ){
     createBook(book: $input) {
@@ -33,7 +33,7 @@ variables: "{
     }
 }"
 ```
-####Corpo da requisição para consultar todos
+#### Corpo da requisição para consultar todos
 ```
 query: "query {
     findBooks {
@@ -43,7 +43,7 @@ query: "query {
 }"
 variables: ""
 ```
-####Corpo da requisição para consultar um por ID
+#### Corpo da requisição para consultar um por ID
 ```
 query: "query findOneBook($input: Int!){
     findOneBook(id: $input) {
