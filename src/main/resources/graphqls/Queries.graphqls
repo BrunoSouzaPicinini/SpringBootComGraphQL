@@ -1,0 +1,5 @@
+type Query {
+    findBooks: [Book]
+    findOneBook(id: Int!): Book
+    sayHello: String
+}
